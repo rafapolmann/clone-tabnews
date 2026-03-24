@@ -20,7 +20,7 @@ function UpdatedAt() {
   const { isLoading, data } = useSWR("/api/v1/status", fetchAPI, {
     refreshInterval: 2000,
   });
-  console.log("TEST");
+
   let updatedAtText = "Carregando...";
   if (!isLoading && data) {
     updatedAtText = new Date(data.updated_at).toLocaleString("pt-BR");
